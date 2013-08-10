@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><whatever> tourism</title>
-    <meta http-equiv="Content-Type"content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-  </head>
-  <body>
-    
-  <div class="navbar">
-    <a class="navbar-brand" href="#"> < whatever > Tourism</a>
-    <ul class="nav navbar-nav">
-      <li><a href="Home.html"> Home</a></li>
-      <li class="active"><a href="Paris.html"> Paris</a></li>
-      <li><a href="Cronograma.html"> Cronograma</a></li>
-      <li><a href="Dicas.html"> Dicas</a></li>
-    </ul>
-  </div>
+{% extends 'base.html' %}
 
+{% container block %}
   <div class="btn-group-vertical">
     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
       Restaurante
@@ -26,14 +8,14 @@
     </button>
 
     <ul class="dropdown-menu">
-      <li><a href="Restaurante.html">Todos</a></li>
+      <li><a href="{% url 'paris_restaurantes' %}">Todos</a></li>
       <li><a href="#">Contemporânea</a></li>
       <li><a href="#">Italiana</a></li>
       <li><a href="#">Japonesa</a></li>
     </ul>
 
-  </div>
-  </div>
+</div>
+
   <div class="btn-group-vertical">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
       Diversão
@@ -41,13 +23,12 @@
     </button>
 
     <ul class="dropdown-menu">
-      <li><a href="Diversão.html">Todos</a></li>
+      <li><a href="{% url 'paris_diversao' %}">Todos</a></li>
       <li><a href="#">Museus</a></li>
       <li><a href="#">+Conhecidos</a></li>
       <li><a href="#">Boates</a></li>
     </ul>
     
-  </div>
 </div>
 
   <div class="btn-group-vertical">
@@ -57,21 +38,11 @@
     </button>
 
     <ul class="dropdown-menu">
-      <li><a href="Eventos.html">Todos</a></li>
+      <li><a href="{% url 'paris_eventos' %}">Todos</a></li>
       <li><a href="#">Shows</a></li>
       <li><a href="#">Teatro</a></li>
       <li><a href="#">Boates</a></li>
     </ul>
     
   </div>
-</div>
-
-    <!-- JavaScript plugins (requires jQuery) -->
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-    <script src="js/respond.js"></script>
-  </body>
-</html>
+{% endblock %}

@@ -9,6 +9,10 @@ def paris(request):
 	restaurantes = Restaurante.objects.all().order_by('-data_cadastro')
 	return render(request, 'Paris.html', locals())
 
+def paris_restaurantes(request):
+	restaurantes = Restaurante.objects.all().order_by('-data_cadastro')
+	return render(request, 'Paris.html', locals())
+
 def paris_restaurante(request, restaurante_id):
 	restaurante = Restaurante.objects.get(id=restaurante_id)
 
@@ -25,3 +29,18 @@ def paris_restaurante(request, restaurante_id):
 
 def cronograma(request):
 	return render(request, 'Cronograma.html')
+
+def dicas(request):
+	return render(request, 'Dicas.html')
+
+def cronograma_dias(request):
+	return render(request, 'Dias.html')
+
+def ver_cronograma(request):
+	return render(request, 'VerCronograma.html')
+
+def paris_eventos(request):
+	return render(request, 'Eventos.html')
+
+def paris_diversao(request):
+	return render(request, 'Diversao.html')	

@@ -20,4 +20,4 @@ class Restaurante(models.Model):
 class Comentario(models.Model):
 	autor = models.CharField(max_length=100)
 	conteudo = models.TextField()
-	restaurante = models.ForeignKey('Restaurante')
+	restaurante = models.ForeignKey('Restaurante')	
