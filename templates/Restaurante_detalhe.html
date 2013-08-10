@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block container %}
+<div class="restaurante">
+	<h1>{{restaurante.nome}}</h1>
+	<div class="descricao">{{restaurante.descricao}}</div>
+	<div class="data">{{restaurante.data_cadastro}}</div>
+</div>
+
+<div class="comentarios">
+	{% for comentario in comentarios %}
+	<div class="comentario">
+		<span class="autor"{{comentario.autor}}></span>
+		<span class="descricao">{{comentario.descricao}}</span>
+	</div>
+	{% endfor %}
+</div>
+
+<form action="{% url 'restaurante_detalhe' restaurante.id %}" method="POST">
+	{% csrf_token %}
+	<input name="autor">
+	<textarea name="descricao"></textarea>
+	<button type="submit">Enviar</button>
+</form>
+
+{% endblock %}
