@@ -3,6 +3,12 @@ from django.db import models
 # Create your models here.
 class Restaurante(models.Model):
 	nome = models.CharField(max_length=100)
+	TIPO = (
+        ('CT','Contemporanea'),
+        ('IT','Italiana'),
+        ('JP','Japonesa'),
+    )
+	tipo = models.CharField(max_length=2, choices=TIPO)
 	descricao = models.TextField()
 	# foto = models.ImageField() # tem que instalar o PIL
 	preco_medio = models.FloatField()
@@ -20,4 +26,5 @@ class Restaurante(models.Model):
 class Comentario(models.Model):
 	autor = models.CharField(max_length=100)
 	conteudo = models.TextField()
-	restaurante = models.ForeignKey('Restaurante')	
+	restaurante = models.ForeignKey('Restaurante')
+
