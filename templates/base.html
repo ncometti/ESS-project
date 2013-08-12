@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet" media="screen">
   </head>
   <body>
 
@@ -13,9 +14,24 @@
     <a class="navbar-brand" href="#"> < WhereEver > Tourism</a>
     <ul class="nav navbar-nav">
       <li><a href="{% url 'home' %}"> Home</a></li>
-      <li><a href="{% url 'paris' %}"> Paris</a></li>
+      
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'paris' %}"> Lugares <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li>  
+            <a href="{% url 'paris' %}"> Paris </a>
+          </li>  
+        </ul> 
+      </li>
+
       <li><a href="{% url 'cronograma' %}"> Cronograma</a></li>
-      <li><a href="{% url 'dicas' %}"> Dicas</a></li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'paris' %}"> Dicas <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li>  
+            <a href="{% url 'dicas' %}"> Paris </a>
+          </li>  
+        </ul> 
+      </li>
     </ul>
 
   </div>
