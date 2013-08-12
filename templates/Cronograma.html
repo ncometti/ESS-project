@@ -1,10 +1,26 @@
 {% extends 'base.html' %}
 
 {% block container %}
-    <div>
+ <div>
     <ul class="cronograma nav nav-tabs">
       <li class="active"><a href="{% url 'cronograma_dias' %}"> Dias</a></li>
       <li><a href="{% url 'ver_cronograma' %}"> Ver cronograma</a></li>
     </ul>
-  </div>
+ </div>
+
+
+<div class="btn-group-vertical">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      Dias da viagem
+      <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu">
+      <li><a href="#">Primeiro dia</a></li>
+      <li><a href="#">Segundo dia</a></li>
+      <li><a href="#">Terceiro dia</a></li>
+      <li><a href="#">Quarto dia</a></li>
+    </ul>
+</div>
+
 {% endblock %}
