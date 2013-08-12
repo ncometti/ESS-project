@@ -14,7 +14,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'core.views.logar', name='logar'),
+    url(r'^$', 'core.views.home', name='home'),
     url(r'^paris/$', 'core.views.paris', name='paris'),
     url(r'^paris/restaurantes/$', 'core.views.paris_restaurantes', name='paris_restaurantes'),
     url(r'^paris/(?P<restaurante_id>\d+)/$', 'core.views.paris_restaurante', name='restaurante_detalhe'),
@@ -25,6 +25,4 @@ urlpatterns = patterns('',
     url(r'^dicas/$', 'core.views.dicas', name='dicas'),
     url(r'^paris/eventos/$', 'core.views.paris_eventos', name='paris_eventos'),
     url(r'^paris/diversao/$', 'core.views.paris_diversao', name='paris_diversao'),
-    url(r'^home/$', 'core.views.home', name='home'),
 )
-

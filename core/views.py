@@ -44,6 +44,3 @@ def paris_eventos(request):
 
 def paris_diversao(request):
 	return render(request, 'Diversao.html')	
-
-def logar(request):
-	return render(request, 'Logar.html')	
