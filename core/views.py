@@ -44,3 +44,6 @@ def paris_eventos(request):
 
 def paris_diversao(request):
 	return render(request, 'Diversao.html')	
+
+def primeirosPassos(request):
+	return render(request, 'PrimeirosPassos.html')	

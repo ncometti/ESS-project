@@ -25,4 +25,5 @@ urlpatterns = patterns('',
     url(r'^dicas/$', 'core.views.dicas', name='dicas'),
     url(r'^paris/eventos/$', 'core.views.paris_eventos', name='paris_eventos'),
     url(r'^paris/diversao/$', 'core.views.paris_diversao', name='paris_diversao'),
+    url(r'^cronograma/primeirosPassos/$', 'core.views.primeirosPassos', name='primeirosPassos'),
 )

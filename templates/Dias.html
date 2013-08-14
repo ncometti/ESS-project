@@ -3,10 +3,13 @@
 {% block container %}
  <div>
     <ul class="cronograma nav nav-tabs">
+      <li><a href="{% url 'primeirosPassos' %}"> Primeiros Passos </a></li>
       <li class="active"><a href="{% url 'cronograma_dias' %}"> Dias</a></li>
       <li><a href="{% url 'ver_cronograma' %}"> Ver cronograma</a></li>
     </ul>
   </div>
+
+  <br>
 
 <div class="btn-group-vertical">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
