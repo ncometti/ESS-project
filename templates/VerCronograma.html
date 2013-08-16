@@ -1,11 +1,35 @@
 {% extends 'base.html' %}
 
 {% block container %}
-    <div>
+  <div>
     <ul class="cronograma nav nav-tabs">
       <li><a href="{% url 'primeirosPassos' %}"> Primeiros Passos </a></li>
       <li><a href="{% url 'cronograma_dias' %}"> Dias</a></li>
       <li class="active"><a href="{% url 'ver_cronograma' %}"> Ver cronograma</a></li>
     </ul>
   </div>
+
+
+<div class="jumbotron">
+		<div class="row marketing">	
+			<div class="col-lg-3">
+				<div class="thumbnail">
+					<div class="caption">
+					<h4><b>Dia1</b></h4>
+					<p><h5>Lista de locais</h5></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
+				<div class="thumbnail">
+					<div class="caption">
+					<h4><b>Dia2</b></h4>
+					<p><h5>Lista de locais</h5></p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+</div>
 {% endblock %}
