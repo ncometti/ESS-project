@@ -1,5 +1,5 @@
 from django.shortcuts import HttpResponse, render
-from models import Restaurante, Comentario
+from models import Restaurante, Comentario, Evento
 
 
 def home(request):
