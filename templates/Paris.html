@@ -2,7 +2,7 @@
 
 {% block container %}
 
-<ul class="pager">
+<ul class="pager pull-rigth">
   <li><a href="{% url 'adicionarRestaurante' %}"> Adicionar Restaurante </a></li>
 </ul>
 
@@ -31,7 +31,6 @@
           <li><a href="{% url 'paris_eventos' %}">Todos</a></li>
           <li><a href="#">Shows</a></li>
           <li><a href="#">Teatro</a></li>
-          <li><a href="#">Boates</a></li> 
         </ul> 
       </li>
 
@@ -44,7 +43,6 @@
     <td>
       <img src="{{STATIC_URL}}css/foto.jpg" class="img-rounded"><br><br>
       Restaurante 1 <br><br>
-          Descricao:<br>
           Nota media:<br>
           Preco medio:<br>
           Site:
@@ -55,7 +53,6 @@
        <td>
         <img src="{{STATIC_URL}}css/foto.jpg" class="img-rounded"><br><br>
           Restaurante 2 <br><br>
-          Descricao:<br>
           Nota media:<br>
           Preco medio:<br>
           Site:
