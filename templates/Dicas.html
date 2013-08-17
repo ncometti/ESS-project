@@ -1,6 +1,44 @@
 {% extends 'base.html' %}
 
 {% block container %}
+  
+  <div>
+    <ul class="paris nav nav-tabs">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'paris_restaurantes' %}"> Restaurantes <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'paris_restaurantes' %}">Todos</a></li>
+          <li><a href="#">Contemporânea</a></li>
+          <li><a href="#">Italiana</a></li>
+          <li><a href="#">Japonesa</a></li>  
+        </ul> 
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'paris_diversao' %}"> Diversão <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'paris_diversao' %}">Todos</a></li>
+          <li><a href="#">Museus</a></li>
+          <li><a href="#">+Conhecidos</a></li>
+          <li><a href="#">Boates</a></li>
+        </ul> 
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'paris_eventos' %}"> Eventos <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'paris_eventos' %}">Todos</a></li>
+          <li><a href="#">Shows</a></li>
+          <li><a href="#">Teatro</a></li>
+          <li><a href="#">Boates</a></li> 
+        </ul> 
+      </li>
+
+      <li class="active"><a href="{% url 'dicas' %}"> Dicas </a></li>
+    </ul>
+ </div>
+
+
+
+
+
       <h1 style="color: #551A8B"> <font size=5> Onde ficar? </font></h1>
         <p style="color: #9C9C9C"> 
 Paris é dividida em 20 bairros numerados, ou arrondissements organizados em espiral a partir do coração da cidade, onde estão a estação Châtelet (a mais movimentada) e o Louvre.<br />

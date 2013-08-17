@@ -2,46 +2,65 @@
 
 {% block container %}
 
-  <div class="btn-group-vertical">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-      Restaurante
-      <span class="caret"></span>
-    </button>
+<ul class="pager">
+  <li><a href="{% url 'adicionarEvento' %}"> Adicionar Eventos </a></li>
+</ul>
 
-    <ul class="dropdown-menu">
-      <li><a href="{% url 'paris_restaurantes' %}">Todos</a></li>
-      <li><a href="#">Contemporânea</a></li>
-      <li><a href="#">Italiana</a></li>
-      <li><a href="#">Japonesa</a></li>
+ <div>
+    <ul class="paris nav nav-tabs">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'paris_restaurantes' %}"> Restaurantes <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'paris_restaurantes' %}">Todos</a></li>
+          <li><a href="#">Contemporânea</a></li>
+          <li><a href="#">Italiana</a></li>
+          <li><a href="#">Japonesa</a></li>  
+        </ul> 
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'paris_diversao' %}"> Diversão <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'paris_diversao' %}">Todos</a></li>
+          <li><a href="#">Museus</a></li>
+          <li><a href="#">+Conhecidos</a></li>
+          <li><a href="#">Boates</a></li>
+        </ul> 
+      </li>
+
+      <li class="active" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'paris_eventos' %}"> Eventos <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'paris_eventos' %}">Todos</a></li>
+          <li><a href="#">Shows</a></li>
+          <li><a href="#">Teatro</a></li>
+          <li><a href="#">Boates</a></li> 
+        </ul> 
+      </li>
+
+      <li><a href="{% url 'dicas' %}"> Dicas </a></li>
     </ul>
-</div>
+ </div>
 
-  <div class="btn-group-vertical">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-      Diversão
-      <span class="caret"></span>
-    </button>
+  <table class="table table-condensed">
+    <tr>
+    <td>
+      <img src="{{STATIC_URL}}css/foto.jpg" class="img-rounded"><br><br>
+      Eventos 1 <br><br>
+          Descricao:<br>
+          Nota media:<br>
+          Preco medio:<br>
+          Site:
+    </td>
+    </tr>
 
-    <ul class="dropdown-menu">
-      <li><a href="{% url 'paris_diversao' %}">Todos</a></li>
-      <li><a href="#">Museus</a></li>
-      <li><a href="#">+Conhecidos</a></li>
-      <li><a href="#">Boates</a></li>
-    </ul>
-</div>
+    <tr>
+       <td>
+        <img src="{{STATIC_URL}}css/foto.jpg" class="img-rounded"><br><br>
+          Eventos 2 <br><br>
+          Descricao:<br>
+          Nota media:<br>
+          Preco medio:<br>
+          Site:
+       </td>
+    </tr>
+  </table>
 
-  <div class="btn-group-vertical">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-      Eventos
-      <span class="caret"></span>
-    </button>
-
-    <ul class="dropdown-menu">
-      <li><a href="{% url 'paris_eventos' %}">Todos</a></li>
-      <li><a href="#">Shows</a></li>
-      <li><a href="#">Teatro</a></li>
-      <li><a href="#">Boates</a></li>
-    </ul>
-    
-  </div>
 {% endblock %}
