@@ -28,7 +28,6 @@ class Evento(models.Model):
 	TIPO = (
         ('Shows','Shows'),
         ('Teatros','Teatros'),
-        ('Boates','Boates'),
     )
 	tipo = models.CharField(max_length=15, choices=TIPO)
 	descricao = models.TextField()

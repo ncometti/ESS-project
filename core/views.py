@@ -1,5 +1,5 @@
 from django.shortcuts import HttpResponse, render
-from models import Restaurante, Comentario, Evento
+from models import Restaurante, Comentario, Evento, Diversao
 
 
 def home(request):
@@ -55,4 +55,7 @@ def adicionarDiversao(request):
 	return render(request, 'AdicionarDiversao.html')
 
 def adicionarEvento(request):
-	return render(request, 'AdicionarEvento.html')		
+	return render(request, 'AdicionarEvento.html')	
+
+def logar(request):
+	return render(request, 'Logar.html')	

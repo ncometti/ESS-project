@@ -29,4 +29,5 @@ urlpatterns = patterns('',
     url(r'^paris/adicionarRestaurante/$', 'core.views.adicionarRestaurante', name='adicionarRestaurante'),
     url(r'^paris/adicionarDiversao/$', 'core.views.adicionarDiversao', name='adicionarDiversao'),
     url(r'^paris/adicionarEvento/$', 'core.views.adicionarEvento', name='adicionarEvento'),
+    url(r'^logar/$', 'core.views.logar', name='logar'),
 )
