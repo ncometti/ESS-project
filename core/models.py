@@ -4,6 +4,12 @@ from django.db import models
 class Restaurante(models.Model):
 	nome = models.CharField(max_length=100)
 	descricao = models.TextField()
+	TIPO = (
+        ('CT','Contemporanea'),
+        ('IT','Italiana'),
+        ('JP','Japonesa'),
+    )
+	tipo = models.CharField(max_length=2, choices=TIPO)
 	# foto = models.ImageField() # tem que instalar o PIL
 	preco_medio = models.FloatField()
 	qualidade = models.FloatField()

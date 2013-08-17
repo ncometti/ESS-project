@@ -47,3 +47,12 @@ def paris_diversao(request):
 
 def primeirosPassos(request):
 	return render(request, 'PrimeirosPassos.html')	
+
+def adicionarRestaurante(request):
+	return render(request, 'AdicionarRestaurante.html')
+
+def adicionarDiversao(request):
+	return render(request, 'AdicionarDiversao.html')
+
+def adicionarEvento(request):
+	return render(request, 'AdicionarEvento.html')		
