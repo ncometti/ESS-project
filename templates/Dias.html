@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 
 {% block container %}
+<br>
+<br>
+<center><font size=3><p style="color: #CC0052"> Aqui você tem a opção de adicionar no cronograma o que você adicionou na lista </font></P></center>
+<br>
  <div>
     <ul class="cronograma nav nav-tabs">
-      <li><a href="{% url 'primeirosPassos' %}"> Primeiros Passos </a></li>
+      <li><a href="{% url 'cronograma' %}"> Primeiros Passos </a></li>
       <li class="active"><a href="{% url 'cronograma_dias' %}"> Dias</a></li>
       <li><a href="{% url 'ver_cronograma' %}"> Ver cronograma</a></li>
     </ul>
@@ -27,11 +31,11 @@
 <table class="table table-condensed">
     <tr>
       <td>
-      <b><h4>Horários</h4></b>
+        <b><h4>Horários</h4></b>
       </td>
 
       <td>
-      <b><h4>Lugares</h4></b>
+        <b><h4>Lugares</h4></b>
       </td>
       <td><b><h4></h4></b></td>
       <td><b><h4></h4></b></td>

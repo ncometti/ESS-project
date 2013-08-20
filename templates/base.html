@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> < WhereEver > Tourism</title>
+    <title>  Wherever </title>
     <meta http-equiv="Content-Type"content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -11,37 +11,100 @@
     <link href="{{STATIC_URL}}css/datepicker.css" rel="stylesheet" media="screen">
   </head>
   <body>
+  <div id="Base">
+    <div id="Topo">
+      <div class="navbar navbar-fixed-top">
+        <a class="navbar-brand" href="#"> <font color="009ACD" font face="franklin gothic medium" size=6> < wherever > </font></a>
+        <ul class="nav navbar-nav">
+          <li><a href="{% url 'home' %}"> <font size=4> Home </font></a></li>
+          
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'paris' %}"> <font size=4> Lugares </font> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li>  
+                <a href="{% url 'paris' %}"> <font size=4> Paris </font></a>
+              </li>  
+            </ul> 
+          </li>
 
-  <div class="navbar">
-    <a class="navbar-brand" href="#"> < WhereEver > Tourism</a>
-    <ul class="nav navbar-nav">
-      <li><a href="{% url 'home' %}"> Home</a></li>
-      
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'paris' %}"> Lugares <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li>  
-            <a href="{% url 'paris' %}"> Paris </a>
-          </li>  
+          <li><a href="{% url 'cronograma' %}"> <font size=4> Cronograma </font></a></li>
         </ul> 
-      </li>
-
-      <li><a href="{% url 'cronograma' %}"> Cronograma</a></li>
-
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'paris' %}"> Dicas <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li>  
-            <a href="{% url 'dicas' %}"> Paris </a>
-          </li>  
-        </ul> 
-      </li>
-    </ul>
-
+          <center><li><fb:login-button show-faces="false" width="200" max-rows="1" autologoutlink = "true" scope = "email"></fb:login-button></li></center>
+      </div>
+    </div>
+    <br>
+    <br> 
   </div>
-
 <div>
     {% block container %}
     {% endblock %}
 </div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=369191073208083";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="fb-root"></div>
+<script>
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '154564548083025', // App ID
+    channelUrl : 'http://localhost:8000/', // Channel File
+    status     : true, // check login status
+    cookie     : true, // enable cookies to allow the server to access the session
+    xfbml      : true  // parse XFBML
+  });
+
+  // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
+  // for any authentication related change, such as login, logout or session refresh. This means that
+  // whenever someone who was previously logged out tries to log in again, the correct case below 
+  // will be handled. 
+    
+  FB.getLoginStatus(function(response) {
+        console.log(response.status);
+    // Here we specify what we do with the response anytime this event occurs. 
+    if (response.status === 'connected') {
+      // The response object is returned with a status field that lets the app know the current
+      // login status of the person. In this case, we're handling the situation where they 
+      // have logged in to the app.
+      log =true;
+      //$("a").hide;
+      testAPI();
+      //location.href = "Home.html";
+    } else if (response.status === 'not_authorized') {
+      window.location = 'http://localhost:8000/logar';
+     
+    } else {
+      window.location = 'http://localhost:8000/logar';
+    }
+  });
+  };
+
+  // Load the SDK asynchronously
+  (function(d){
+   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement('script'); js.id = id; js.async = true;
+   js.src = "//connect.facebook.net/en_US/all.js";
+   ref.parentNode.insertBefore(js, ref);
+  }(document));
+
+  // Here we run a very simple test of the Graph API after login is successful. 
+  // This testAPI() function is only called in those cases. 
+  function testAPI() {
+
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Good to see you, ' + response.email + '.');
+    });
+  }
+</script>
+
 
     <!-- JavaScript plugins (requires jQuery) -->
     <script src="http://code.jquery.com/jquery.js"></script>
@@ -50,6 +113,5 @@
     <script src="{{STATIC_URL}}js/bootstrap-datepicker.js"></script>
 
     <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-    <script src="{{STATIC_URL}}js/respond.js"></script>
   </body>
 </html>

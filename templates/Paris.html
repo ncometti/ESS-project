@@ -1,58 +1,126 @@
 {% extends 'base.html' %}
 
 {% block container %}
-<div class="btn-group-vertical">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-      Restaurante
-      <span class="caret"></span>
-    </button>
 
-    <ul class="dropdown-menu">
-      <li><a href="{% url 'paris_restaurantes' %}">Todos</a></li>
-      <li><a href="#">Contemporânea</a></li>
-      <li><a href="#">Italiana</a></li>
-      <li><a href="#">Japonesa</a></li>
+<!-- Button trigger modal -->
+<br>
+  <center><a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg" class="pager pull-rigth"> Adicionar Restaurante </a></center>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title"> Adicionar Restaurante </h4>
+        </div>
+        <div class="modal-body">
+            
+                            
+                <div class="jumbotron"> 
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <label for="inputName" class="col-lg-2 control-label"><font size=2> Nome </font></label>
+                      <div class="col-lg-6">
+                        <input type="text" class="form-control" id="inputName" placeholder="Nome"></input>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputTipo" class="col-lg-2 control-label"><font size=2> Tipo </font></label>
+                      <div class="col-lg-6">
+                        <input type="text" class="form-control" id="inputTipo" placeholder="Tipo"></input>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group">
+                      <label for="inputNotaMedia" class="col-lg-2 control-label"><font size=2> Nota </font></label>
+                      <div class="col-lg-6">
+                        <input type="text" class="form-control" id="inputNotaMedia" placeholder="Nota média"></input>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputPrecoMedio" class="col-lg-2 control-label"><font size=2> Preço </font></label>
+                      <div class="col-lg-6">
+                        <input type="text" class="form-control" id="inputPrecoMedio" placeholder="Preço médio"></input>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputSite" class="col-lg-2 control-label"><font size=2> Site </font></label>
+                      <div class="col-lg-6">
+                        <input type="text" class="form-control" id="inputSite" placeholder="Site"></input>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal"> Cancelar </button>
+          <a type="button" class="btn btn-primary" href="{% url 'paris_restaurantes' %}"> Adicionar </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+<br>
+
+ <div>
+    <ul class="paris nav nav-tabs">
+      <li class="active" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'paris_restaurantes' %}"> Restaurantes <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'paris_restaurantes' %}">Todos</a></li>
+          <li><a href="#">Contemporânea</a></li>
+          <li><a href="#">Italiana</a></li>
+          <li><a href="#">Japonesa</a></li>  
+        </ul> 
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'paris_diversao' %}"> Diversão <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'paris_diversao' %}">Todos</a></li>
+          <li><a href="#">Museus</a></li>
+          <li><a href="#">+Conhecidos</a></li>
+          <li><a href="#">Boates</a></li>
+        </ul> 
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'paris_eventos' %}"> Eventos <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'paris_eventos' %}">Todos</a></li>
+          <li><a href="#">Shows</a></li>
+          <li><a href="#">Teatro</a></li>
+        </ul> 
+      </li>
+
+      <li><a href="{% url 'dicas' %}"> Dicas </a></li>
     </ul>
+ </div>
 
-</div>
+  <table class="table table-condensed">
+    <div class="restaurantes">
+      <ul>
+        {% for restaurante in restaurantes %}
+          <tr>
+            <td>
+              <img src="{{STATIC_URL}}css/foto.jpg" class="img-rounded"><br><br>
+              <p align="left"><input type="checkbox" id="check1">Matemática </p>
 
-  <div class="btn-group-vertical">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-      Diversão
-      <span class="caret"></span>
-    </button>
-
-    <ul class="dropdown-menu">
-      <li><a href="{% url 'paris_diversao' %}">Todos</a></li>
-      <li><a href="#">Museus</a></li>
-      <li><a href="#">+Conhecidos</a></li>
-      <li><a href="#">Boates</a></li>
-    </ul>
-    
-  </div>
-
-  <div class="btn-group-vertical">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-      Eventos
-      <span class="caret"></span>
-    </button>
-
-    <ul class="dropdown-menu">
-      <li><a href="{% url 'paris_eventos' %}">Todos</a></li>
-      <li><a href="#">Shows</a></li>
-      <li><a href="#">Teatro</a></li>
-      <li><a href="#">Boates</a></li>
-    </ul>
-    
-  </div>
-
-  <div class="restaurantes">
-    <ul>
-      {% for restaurante in restaurantes %}
-        <li>
-          <a href="{% url 'restaurante_detalhe' restaurante.id %}">{{restaurante.nome}}</a>
-        </li>
+              {{restaurante.nome}} <br><br>
+              Nota media: {{restaurante.nota_media}}<br>
+              Preco medio: {{restaurante.preco_medio}}<br>
+              Site: {{restaurante.site}}<br><br>
+              Comentários:<br>
+              <div class="fb-comments" data-href="http://localhost:8000/paris/restaurantes_todos/{{restaurante.id}}" data-width="470"></div>
+          </td>
+        </tr>
       {% endfor %}
     </ul>
-  </div>
+  </div> 
+
+    
+  </table>
+
 {% endblock %}

@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 
 {% block container %}
+<br>
+<br>
+<center><font size=3><p style="color: #CC0052"> Aqui você pode ver como está o seu cronograma </font></P></center>
+<br>
   <div>
     <ul class="cronograma nav nav-tabs">
-      <li><a href="{% url 'primeirosPassos' %}"> Primeiros Passos </a></li>
+      <li><a href="{% url 'cronograma' %}"> Primeiros Passos </a></li>
       <li><a href="{% url 'cronograma_dias' %}"> Dias</a></li>
       <li class="active"><a href="{% url 'ver_cronograma' %}"> Ver cronograma</a></li>
     </ul>

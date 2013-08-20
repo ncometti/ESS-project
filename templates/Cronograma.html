@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 
 {% block container %}
+<br>
+<br>
+<center><font size=3><p style="color: #CC0052">Escolha aqui o dia de início e o dia de término da sua viagem, assim como a hora que você chega na cidade e a hora que você parte dela</font></P></center>
+<br>
  <div>
-    <ul class="cronograma nav nav-tabs">
-      <li class="active"><a href="{% url 'primeirosPassos' %}"> Primeiros Passos </a></li>
+    <ul class="cronograma nav nav-tabs" padding-left: 20px>
+      <li class="active"><a href="{% url 'cronograma' %}"> Primeiros Passos </a></li>
       <li><a href="{% url 'cronograma_dias' %}"> Dias</a></li>
       <li><a href="{% url 'ver_cronograma' %}"> Ver cronograma</a></li>
     </ul>
@@ -11,30 +15,55 @@
 
 <br>
 <form>
-<fieldset>
-<legend> Período da viagem </legend>
-<ul>
-<li>
-<label for="nome">Ida:</label>
-<input name="calendario" type="datetime"/>  
-<label for="nome">Volta:</label>
-<input name="calendario" type="datetime"/>
-</li>
-</form>
+	<fieldset>
+	<legend> Período da viagem </legend>
+	<br>
+	<ul>
+					<html lang="en">
+						<head>
+						  <meta charset="utf-8" />
+						  <title>jQuery UI Datepicker - Default functionality</title>
+						  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+						  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+						  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+						  <link rel="stylesheet" href="/resources/demos/style.css" />
+						  <script>
+						  $(function() {
+						    $( "#datepicker" ).datepicker();
+						  });
+						  </script>
+						</head>
+						<body>
+						 
+						<p class="inline">	Ida: <input type="text" id="datepicker"></input></p>
+						<p class="inline2"><input name="hora" type="time"></input></p>
+						<br>
+						 
+						</body>
+					</html>  
 
+					<html lang="en">
+						<head>
+						  <meta charset="utf-8" />
+						  <title>jQuery UI Datepicker - Default functionality</title>
+						  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+						  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+						  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+						  <link rel="stylesheet" href="/resources/demos/style.css" />
+						  <script>
+						  $(function() {
+						    $( "#datepicker2" ).datepicker();
+						  });
+						  </script>
+						</head>
+						<body>
+							<br>
+						<p class="inline">Volta: <input type="text" id="datepicker2" /></p>
+						<p class="inline2"><input name="hora" type="time"></input></p>
 
-<br>
-
-<form>
-<fieldset>
-<legend> Horário de chegada e partida </legend>
-<ul>
-<li>
-<label for="nome">Ida:</label>
-<input name="hora" type="time"/>  
-<label for="nome">Volta:</label>
-<input name="hora" type="time"/>
-</li>
+						</body>
+					</html> 
+	</ul>
 </form>
 
 {% endblock %}
